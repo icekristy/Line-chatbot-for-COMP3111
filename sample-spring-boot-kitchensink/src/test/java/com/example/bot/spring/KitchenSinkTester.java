@@ -49,7 +49,7 @@ import com.example.bot.spring.DatabaseEngine;
 @SpringBootTest(classes = { KitchenSinkTester.class, DatabaseEngine.class })
 public class KitchenSinkTester {
 	@Autowired
-	private DatabaseEngine databaseEngine;
+	private SQLDatabaseEngine databaseEngine;
 	
 	@Test
 	public void testNotFound() throws Exception {
