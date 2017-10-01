@@ -11,35 +11,35 @@ import java.net.URI;
 public class SQLDatabaseEngine extends DatabaseEngine {
 	@Override
 	String search(String text) throws Exception {
-		//Write your code here
 		ResultSet result = null;
 		Connection connection = null;
 		PreparedStatement stmt = null;
+		String response = null;
 		try {
 			connection = this.getConnection();
 			stmt = connection.prepareStatement(
-					"select response from test where keyword like concat('%', ?, '%')"
+					"SELECT response FROM test WHERE keyword = ?"
 			);
 			stmt.setString(1, text);
 			result = stmt.executeQuery();
-			if (result.next())
-				return result.getString(1);
-			System.out.println("result: " + result.toString());
+			if (result.next()){
+				response = result.getString(1);
+			}
 		} catch (Exception e) {
-			log.info("IOException while reading file: {}", e.toString());
+			log.info("Exception while access database: {}", e.toString());
 		} finally {
 			try {
-				result.close();stmt.close();connection.close();
+				result.close();
+				stmt.close();
+				connection.close();
 			} catch (Exception ex) {
-				log.info("IOException while closing file: {}", ex.toString());
+				log.info("Exception while closing database: {}", ex.toString());
 			}
 		}
-		if (result.next())
-			return result.getString(1);
+		if (response != null)
+			return response;
 		throw new Exception("NOT FOUND");
-
-
-	}
+	}                        
 	
 	
 	private Connection getConnection() throws URISyntaxException, SQLException {
