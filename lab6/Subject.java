@@ -23,8 +23,9 @@ public class Subject {
 	}
 
 	public void notifyObservers() {
-		for (Observer ob: observers)
-			ob.update();
+		List<Observer> t = new ArrayList<>(observers);
+			for (Observer obj: t)
+				obj.update();
 	}
 
 	public void setMessage(String msg) {
