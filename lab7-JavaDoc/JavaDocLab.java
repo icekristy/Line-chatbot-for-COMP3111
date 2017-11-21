@@ -17,6 +17,11 @@ class Student {
     /* TODO: change this comment block to doc comment. (Remember to add explanation for the parameters)
      * This method is the constructor of a Student object. You can use this method to construct a Student.
      * The parameters include a {@link String} to represent student ID, a {@link String} to name and a double to represent GPA score of the student.
+     * Constructs a Student with the student ID, name and GPA.
+     *
+     * @param stuID the primary key of student
+     * @param name the name of student
+     * @param GPA the result of student
      */
     public Student(String stuID, String name, float GPA) {
         this.stuID = stuID;
@@ -42,7 +47,7 @@ class Student {
 
     /*TODO: change this comment block to doc comment. (Remember to add explanation for the return value)
      * Returns the GPA score of the Student
-     *
+     * @return GPA of student
      */
     public float getGPA() {
         return GPA;
@@ -69,8 +74,8 @@ class Student {
 /* TODO: change this comment block to doc comment and add your own information to @author and @since
  * This class is the major class for the JavaDoc Lab in COMP3111
  *
- * @author PUT_YOUR_NAME_HERE
- * @since PUT_THE_DATE_OF_YOUR_LAB_SESSION
+ * @author Kristy Fung
+ * @since 23-11-2017
  */
 public class JavaDocLab {
 
@@ -78,6 +83,9 @@ public class JavaDocLab {
      *
      * This method sort the students in a student list (parameter) by their student ID in alphabetical order
      * It takes the student list as parameter and sorts the input list.
+     * Sort the student list by student ID
+     * 
+     * @param studentList all the student in list
      */
     public static void sortByStuId(List<Student> studentList) {
 
@@ -85,9 +93,10 @@ public class JavaDocLab {
 
 
     /**TODO: Please check the code of this method and write the contents of the JavaDoc for this method (Remeber to include explanations for the parameter and return value)
+     * Returns the student with the highest GPA
      *
-     *
-     *
+     * @param studentList all the student in list
+     * @return the matched student with highest GPA
      */
     public static Student getHighestGPA(List<Student> studentList) {
         float max = -1f;
