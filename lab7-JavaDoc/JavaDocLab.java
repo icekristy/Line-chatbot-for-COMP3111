@@ -7,11 +7,17 @@ import java.util.List;
  */
 class Student {
     //TODO: change he following descriptions of the fields into doc comment
-    //This is the student ID
+    /**
+     * This is the student ID
+     */
     String stuID;
-    //This is the name of the student
+    /**
+     * This is the name of the student
+     */
     String name;
-    //This is the GPA of the student
+    /**
+     * This is the GPA of the student
+     */
     float GPA;
 
     /* TODO: change this comment block to doc comment. (Remember to add explanation for the parameters)
@@ -74,8 +80,8 @@ class Student {
 /* TODO: change this comment block to doc comment and add your own information to @author and @since
  * This class is the major class for the JavaDoc Lab in COMP3111
  *
- * @author Kristy Fung
- * @since 23-11-2017
+ * @author ylfungaa
+ * @since 2017-11-23
  */
 public class JavaDocLab {
 
